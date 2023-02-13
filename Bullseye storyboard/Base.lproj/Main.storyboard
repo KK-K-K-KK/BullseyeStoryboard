@@ -25,15 +25,6 @@
                                     <action selector="showAlert" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJA-y7-zD1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzc-pV-KPs">
-                                <rect key="frame" x="401" y="285" width="127" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Knock knock!"/>
-                                <connections>
-                                    <action selector="knockKnock" destination="BYZ-38-t0r" eventType="touchUpInside" id="scV-mV-8kf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
