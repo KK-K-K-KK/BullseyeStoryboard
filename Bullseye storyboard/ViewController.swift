@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,5 +21,8 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    @IBAction func sliderMoved(_ slider: UISlider) {
+        print("The value of the slider is now \(slider.value)")
+    }
 }
 
