@@ -9,20 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var sliderValue : Int = 50
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func showAlert() {
-        var alert = UIAlertController(title: "Hello, World!", message: "This is my first app.", preferredStyle: .alert)
+        var alert = UIAlertController(title: "Boom!", message: "The slider value is \(sliderValue).", preferredStyle: .alert)
         var alertAction = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         alert.addAction(alertAction)
         self.present(alert, animated: true)
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
-        print("The value of the slider is now \(slider.value)")
+        sliderValue = Int((slider.value * 100).rounded())
     }
 }
 
