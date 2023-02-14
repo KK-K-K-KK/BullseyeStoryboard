@@ -74,6 +74,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         startNewRound()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")!
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")!
+        slider.setThumbImage(thumbImageHighlighted, for:.highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14) // do not repeat the left and right-most 14 pixels of image
+        
+        let sliderTrackMinImage = UIImage(named: "SliderTrackLeft")!
+        let sliderTrackMinResizable = sliderTrackMinImage.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(sliderTrackMinResizable, for: .normal)
+        
+        let sliderTrackMaxImage = UIImage(named: "SliderTrackRight")!
+        let sliderTrackMaxResizable = sliderTrackMaxImage.resizableImage(withCapInsets: insets)
+        slider.setMaximumTrackImage(sliderTrackMaxResizable, for: .normal)
     }
     
 
