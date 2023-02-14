@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         setSliderValue()
         roundValue += 1
         roundLabel.text = String(roundValue)
-        targetValue = Int.random(in: 1...100)
+        targetValue = Int.random(in: 0...100)
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(totalScore)
     }
