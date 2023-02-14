@@ -9,12 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var sliderValue : Int = 50
+    var sliderValue : Int = 0
+    
+    @IBOutlet weak var slider: UISlider!
+
+    func setSliderValue() {
+        sliderValue = Int((slider.value * 100).rounded())
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setSliderValue()
     }
+    
 
     @IBAction func showAlert() {
         var alert = UIAlertController(title: "Boom!", message: "The slider value is \(sliderValue).", preferredStyle: .alert)
@@ -24,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
-        sliderValue = Int((slider.value * 100).rounded())
+        setSliderValue()
     }
 }
 
