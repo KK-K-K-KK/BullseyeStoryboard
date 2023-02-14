@@ -36,7 +36,18 @@ class ViewController: UIViewController {
     
     func endRound() {
         let difference = abs(targetValue - sliderValue)
-        let score = 100 - difference
+        let score: Int
+        if (difference == 0) {
+            score = 200
+        }
+        else if (difference == 1) {
+            score = 150
+        }
+        else {
+            score = 100 - difference
+        }
+            
+        
         totalScore = totalScore + score
         
         let message = "You scored \(score) points!"
