@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     var targetValue : Int = 0
     
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
 
     func setSliderValue() {
         sliderValue = Int((slider.value * 100).rounded())
@@ -23,7 +25,10 @@ class ViewController: UIViewController {
         slider.value = 0.5
         setSliderValue()
         roundValue += 1
+        roundLabel.text = String(roundValue)
         targetValue = Int.random(in: 1...100)
+        targetLabel.text = String(targetValue)
+        
     }
     
     override func viewDidLoad() {
@@ -35,8 +40,8 @@ class ViewController: UIViewController {
 
     @IBAction func showAlert() {
         let message = "The slider value is \(sliderValue).\n The target value is \(targetValue).\n This is round \(roundValue)."
-        var alert = UIAlertController(title: "Boom!", message: message, preferredStyle: .alert)
-        var alertAction = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let alert = UIAlertController(title: "Boom!", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         alert.addAction(alertAction)
         self.present(alert, animated: true)
         startNewRound()
