@@ -86,6 +86,14 @@ class ViewController: UIViewController {
         setSliderValue()
     }
     
+    @IBAction func startOver() {
+        sliderValue = 0
+        roundValue = 0
+        targetValue = 0
+        scoreValue = 0
+        startNewRound()
+    }
+    
     
 }
 
