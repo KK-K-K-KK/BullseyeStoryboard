@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     var sliderValue : Int = 0
     var roundValue : Int = 0
     var targetValue : Int = 0
+    var difference: Int = 0
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
@@ -31,6 +32,16 @@ class ViewController: UIViewController {
         
     }
     
+    func setScore() {
+        if (targetValue > sliderValue) {
+            difference = targetValue - sliderValue
+        } else if (sliderValue > targetValue) {
+            difference = sliderValue - targetValue
+        } else {
+            difference = 0
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,7 +50,8 @@ class ViewController: UIViewController {
     
 
     @IBAction func showAlert() {
-        let message = "The slider value is \(sliderValue).\n The target value is \(targetValue).\n This is round \(roundValue)."
+        setScore()
+        let message = "The slider value is \(sliderValue).\n The target value is \(targetValue).\n The difference is \(difference)."
         let alert = UIAlertController(title: "Boom!", message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         alert.addAction(alertAction)
