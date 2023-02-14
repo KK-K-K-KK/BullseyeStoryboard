@@ -13,10 +13,12 @@ class ViewController: UIViewController {
     var roundValue : Int = 0
     var targetValue : Int = 0
     var difference: Int = 0
+    var totalScore: Int = 0
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
 
     func setSliderValue() {
         sliderValue = Int((slider.value * 100).rounded())
@@ -29,17 +31,19 @@ class ViewController: UIViewController {
         roundLabel.text = String(roundValue)
         targetValue = Int.random(in: 1...100)
         targetLabel.text = String(targetValue)
-        
+        scoreLabel.text = String(totalScore)
     }
     
-    func setScore() {
-        if (targetValue > sliderValue) {
-            difference = targetValue - sliderValue
-        } else if (sliderValue > targetValue) {
-            difference = sliderValue - targetValue
-        } else {
-            difference = 0
-        }
+    func endRound() {
+        let difference = abs(targetValue - sliderValue)
+        let score = 100 - difference
+        totalScore = totalScore + score
+        
+        let message = "You scored \(score) points!"
+        let alert = UIAlertController(title: "Boom!", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        self.present(alert, animated: true)
     }
     
     override func viewDidLoad() {
@@ -50,12 +54,8 @@ class ViewController: UIViewController {
     
 
     @IBAction func showAlert() {
-        setScore()
-        let message = "The slider value is \(sliderValue).\n The target value is \(targetValue).\n The difference is \(difference)."
-        let alert = UIAlertController(title: "Boom!", message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Awesome", style: .default, handler: nil)
-        alert.addAction(alertAction)
-        self.present(alert, animated: true)
+        endRound()
+        
         startNewRound()
     }
     

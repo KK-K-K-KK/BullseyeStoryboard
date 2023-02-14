@@ -73,8 +73,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1t-0C-W6x">
-                                <rect key="frame" x="253" y="301" width="31" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1t-0C-W6x">
+                                <rect key="frame" x="253" y="301" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -105,6 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="roundLabel" destination="Fad-rj-LSV" id="EKS-Q8-ee0"/>
+                        <outlet property="scoreLabel" destination="L1t-0C-W6x" id="rU3-wt-tzu"/>
                         <outlet property="slider" destination="dWO-2E-Zlj" id="T9m-td-iWG"/>
                         <outlet property="targetLabel" destination="M1w-vV-vPT" id="YqE-rK-DEf"/>
                     </connections>
