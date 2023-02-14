@@ -63,7 +63,10 @@ class ViewController: UIViewController {
         }
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Try again", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "Try again", style: .default, handler: {
+            alertAction in
+            self.startNewRound()
+        })
         alert.addAction(alertAction)
         self.present(alert, animated: true)
     }
@@ -77,8 +80,6 @@ class ViewController: UIViewController {
 
     @IBAction func showAlert() {
         endRound()
-        
-        startNewRound()
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
