@@ -40,8 +40,19 @@ class ViewController: UIViewController {
         totalScore = totalScore + score
         
         let message = "You scored \(score) points!"
-        let alert = UIAlertController(title: "Boom!", message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let title : String
+        if (score == 100) {
+            title = "Perfect!"
+        }
+        else if (score >= 90) {
+            title = "You almost had it!"
+        }
+        else {
+            title = "Better luck next time!"
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Try again", style: .default, handler: nil)
         alert.addAction(alertAction)
         self.present(alert, animated: true)
     }
