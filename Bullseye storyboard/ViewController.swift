@@ -12,8 +12,7 @@ class ViewController: UIViewController {
     var sliderValue : Int = 0
     var roundValue : Int = 0
     var targetValue : Int = 0
-    var difference: Int = 0
-    var totalScore: Int = 0
+    var scoreValue: Int = 0
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
@@ -31,31 +30,31 @@ class ViewController: UIViewController {
         roundLabel.text = String(roundValue)
         targetValue = Int.random(in: 0...100)
         targetLabel.text = String(targetValue)
-        scoreLabel.text = String(totalScore)
+        scoreLabel.text = String(scoreValue)
     }
     
     func endRound() {
         let difference = abs(targetValue - sliderValue)
-        let score: Int
+        let points: Int
         if (difference == 0) {
-            score = 200
+            points = 200
         }
         else if (difference == 1) {
-            score = 150
+            points = 150
         }
         else {
-            score = 100 - difference
+            points = 100 - difference
         }
             
         
-        totalScore = totalScore + score
+        scoreValue = scoreValue + points
         
-        let message = "You scored \(score) points!"
+        let message = "You scored \(points) points!"
         let title : String
-        if (score == 100) {
+        if (points == 100) {
             title = "Perfect!"
         }
-        else if (score >= 90) {
+        else if (points >= 90) {
             title = "You almost had it!"
         }
         else {
@@ -81,6 +80,7 @@ class ViewController: UIViewController {
     @IBAction func showAlert() {
         endRound()
     }
+    
     
     @IBAction func sliderMoved(_ slider: UISlider) {
         setSliderValue()
