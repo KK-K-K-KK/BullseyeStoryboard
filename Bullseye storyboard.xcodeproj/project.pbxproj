@@ -28,6 +28,7 @@
 		5592CA74299A1C74005A7157 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5592CA80299B282D005A7157 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5592CA82299B2BE2005A7157 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
+		5592CA86299CCB68005A7157 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		5592CA5A299A1C73005A7157 = {
 			isa = PBXGroup;
 			children = (
+				5592CA86299CCB68005A7157 /* README.md */,
 				5592CA82299B2BE2005A7157 /* AuthorViewController.swift */,
 				5592CA65299A1C73005A7157 /* Bullseye storyboard */,
 				5592CA64299A1C73005A7157 /* Products */,
